@@ -1,0 +1,38 @@
+export interface CentralInstanceInterface{
+  uid:string,
+  name:string,
+  description:string,
+  version:string,
+  yearPublished:string,
+  sections:{
+    uid:string,
+    code:string,
+    name:string,
+    description:string,
+    subSections:{
+      uid:stirng,
+      code:string,
+      name:string,
+      description,
+       indicators:{
+          uid:string,
+          code:string,
+          name:string,
+          description:string,
+          translations:{
+            uid:string,
+            lang:string,
+            name:string,
+            description:string
+          }[],
+          indicatorType:string,// PERCENTAGE, NUMBER, RATIO, RATE etc
+          formula:string,
+          denominator:string,
+          numerator:string
+        }[],
+    }[]
+  }[],
+  isPublished:boolean,
+  createdAt:date
+  publishedAt:date,
+}
