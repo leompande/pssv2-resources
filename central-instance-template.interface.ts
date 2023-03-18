@@ -8,11 +8,13 @@ export interface CentralInstanceInterface{
     uid:string,
     code:string,
     name:string,
+    sectionNumber:number,
     description:string,
     subSections:{
       uid:stirng,
       code:string,
       name:string,
+      subSectionNumber:number,
       description,
        indicators:{
           uid:string,
