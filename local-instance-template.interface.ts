@@ -21,6 +21,7 @@ export interface LocalInstanceTemplateInterface {
           code:string,
           name:string,
           description:string,
+          isDataSharable:boolean,
           translations:{
             uid:string,
             lang:string,
