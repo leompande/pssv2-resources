@@ -35,4 +35,9 @@
   isPublished:boolean,
   createdAt:date
   publishedAt:date,
+  centralInstance:{
+      uid:string,
+      version:string
+      createdAt:string
+    }
 }
