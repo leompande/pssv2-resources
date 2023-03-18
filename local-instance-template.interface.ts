@@ -13,7 +13,7 @@
       uid:stirng,
       code:string,
       name:string,
-      description,
+      description:string,
        indicators:{
           uid:string,
           code:string,
