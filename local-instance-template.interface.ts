@@ -7,12 +7,14 @@
   sections:{
     uid:string,
     code:string,
+    sectionNumber:number,
     name:string,
     description:string,
     subSections:{
       uid:stirng,
       code:string,
       name:string,
+      subSectionNumber:number,
       description:string,
        indicators:{
           uid:string,
@@ -33,11 +35,11 @@
     }[]
   }[],
   isPublished:boolean,
-  createdAt:date
+  createdAt:date,
   publishedAt:date,
   centralInstance:{
       uid:string,
-      version:string
+      version:string,
       createdAt:string
     }
 }
