@@ -1,4 +1,4 @@
-{
+export interface LocalInstanceTemplateInterface {
   uid:string,
   name:string,
   description:string,
