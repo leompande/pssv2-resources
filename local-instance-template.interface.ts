@@ -27,10 +27,17 @@ export interface LocalInstanceTemplateInterface {
             name:string,
             description:string
           }[],
+          dataElements:{
+            uid:stirng,
+            code:string,
+            name:string,
+            description:string,
+            dataType:string
+          }[],
           indicatorType:string,// PERCENTAGE, NUMBER, RATIO, RATE etc
           formula:string,
-          denominator:string,
-          numerator:string
+          denominator:string, // DATA ELEMENT UUID
+          numerator:string // DATA ELEMENT UUID
         }[],
     }[]
   }[],
