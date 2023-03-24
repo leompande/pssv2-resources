@@ -1,4 +1,3 @@
-
 interface DataElementInterface {
   name: string;
   shortName: string;
@@ -13,29 +12,18 @@ function createDataElementsPayload(subSections: LocalInstanceTemplateInterface['
 
   subSections.forEach((subsection) => {
     subsection.indicators.forEach((indicator) => {
-      const dataElement: DataElementInterface = {
-        name: indicator.name,
-        shortName: indicator.code,
-        code: indicator.code,
-        valueType: 'NUMBER', // Default value type
-        aggregationType: 'SUM', // Default aggregation type
-        domainType: 'AGGREGATE' // Default domain type
-      };
+      indicator.dataElements.forEach((dataElement) => {
+        const newElement: DataElementInterface = {
+          name: dataElement.name,
+          shortName: dataElement.code,
+          code: dataElement.code,
+          valueType: dataElement.dataType,
+          aggregationType: 'SUM', // Default aggregation type
+          domainType: 'AGGREGATE' // Default domain type
+        };
 
-      if (indicator.indicatorType === 'PERCENTAGE') {
-        dataElement.valueType = 'PERCENTAGE';
-      }
-
-      if (indicator.formula) {
-        dataElement.valueType = 'CALCULATED_VALUE';
-      }
-
-      if (indicator.numerator && indicator.denominator) {
-        dataElement.aggregationType = 'RATIO';
-        dataElement.domainType = 'AGGREGATE';
-      }
-
-      dataElements.push(dataElement);
+        dataElements.push(newElement);
+      });
     });
   });
 
